@@ -1,0 +1,35 @@
+{
+  "name": "powerpagesclientapi",
+  "version": "1.0.0",
+  "description": "Client API resembling the Client API of Dataverse MDA for Power Pages",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.dev.js",
+    "start": "webpack --config webpack.dev.js --watch",
+    "dist": "webpack --config webpack.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kunter-Bunt/PowerPagesClientAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kunter-Bunt/PowerPagesClientAPI/issues"
+  },
+  "homepage": "https://github.com/Kunter-Bunt/PowerPagesClientAPI#readme",
+  "devDependencies": {
+    "@types/xrm": "^9.0.80",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "tslib": "^2.6.3"
+  }
+}
