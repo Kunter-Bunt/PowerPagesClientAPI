@@ -1,4 +1,4 @@
-export class Attribute {
+export class Attribute2 {
     private attributeName: string;
     private element: HTMLElement;
 
