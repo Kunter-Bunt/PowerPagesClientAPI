@@ -1,22 +1,36 @@
+import { AttributeBase } from "./AttributeBase";
+
 export class BooleanAttribute extends AttributeBase implements Xrm.Attributes.BooleanAttribute {
-    initialValue: boolean;
+    initialValue: boolean | null;
+    radioButtons: NodeListOf<HTMLInputElement>;
 
     constructor(logicalName: string) {
         super(logicalName);
 
-        this.initialValue = this.element.checked;
+        this.radioButtons = this.element.querySelectorAll('input[type="radio"]');
+        this.initialValue = this.getValue();
     }
 
     getInitialValue(): boolean | null {
         return this.initialValue;
     }
 
-    getValue(): boolean {
-        return this.element.checked;
+    getValue(): boolean | null {
+        for (let i = 0; i < this.radioButtons.length; i++) {
+            const radioButton = this.radioButtons[i];
+            if (radioButton.checked) {
+                return radioButton.value == "1";
+            }
+        }
+        return null;
     }
 
     setValue(value: boolean): void {
-        this.element.checked = value;
+        const valueString = value ? "1" : "0";
+        for (let i = 0; i < this.radioButtons.length; i++) {
+            const radioButton = this.radioButtons[i];
+            radioButton.checked = radioButton.value === valueString;
+        }
     }
     
     getAttributeType(): "boolean" {

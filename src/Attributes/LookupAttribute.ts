@@ -1,3 +1,5 @@
+import { AttributeBase } from "./AttributeBase";
+
 export class LookupAttribute extends AttributeBase implements Xrm.Attributes.LookupAttribute
 {
     entity: HTMLInputElement;
@@ -14,6 +16,8 @@ export class LookupAttribute extends AttributeBase implements Xrm.Attributes.Loo
     }
 
     getValue(): Xrm.LookupValue[] {
+        if (!this.element.value)
+            return [];
         return [{
             id: this.element.value,
             name: this.name.value,

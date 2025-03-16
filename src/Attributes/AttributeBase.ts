@@ -1,4 +1,4 @@
-abstract class AttributeBase implements Xrm.Attributes.Attribute {
+export abstract class AttributeBase implements Xrm.Attributes.Attribute {
     logicalName: string;
     element: HTMLInputElement;
 

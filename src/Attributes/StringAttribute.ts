@@ -1,3 +1,5 @@
+import { AttributeBase } from "./AttributeBase";
+
 export class StringAttribute extends AttributeBase implements Xrm.Attributes.StringAttribute {
     constructor(logicalName: string) {
         super(logicalName);

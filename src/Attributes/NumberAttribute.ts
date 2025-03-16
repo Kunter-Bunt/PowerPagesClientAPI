@@ -1,3 +1,5 @@
+import { AttributeBase } from "./AttributeBase";
+
 export class NumberAttribute extends AttributeBase implements Xrm.Attributes.NumberAttribute
 {
     constructor(logicalName: string) {
@@ -9,8 +11,8 @@ export class NumberAttribute extends AttributeBase implements Xrm.Attributes.Num
         return value ? Number(value) : null;
     }
 
-    setValue(value: any): void {
-        this.element.value = value;
+    setValue(value: number | null): void {
+        this.element.value = value ? value.toString() : "";
     }
   
     getFormat(): Xrm.Attributes.IntegerAttributeFormat {

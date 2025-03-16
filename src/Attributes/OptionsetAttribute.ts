@@ -1,27 +1,18 @@
+import { AttributeBase } from "./AttributeBase";
+
 export class OptionSetAttribute extends AttributeBase implements Xrm.Attributes.OptionSetAttribute
 {
-    radioButtons: NodeListOf<HTMLInputElement>;
-
     constructor(logicalName: string) {
         super(logicalName);
-        this.radioButtons = this.element.querySelectorAll('input[type="radio"]');
     }
 
     getValue(): number | null {
-        for (let i = 0; i < this.radioButtons.length; i++) {
-            const radioButton = this.radioButtons[i];
-            if (radioButton.checked) {
-                return Number(radioButton.value);
-            }
-        }
-        return null;
+        const value = this.element.value;
+        return value ? Number(value) : null;
     }
 
     setValue(value: number | null): void {
-        for (let i = 0; i < this.radioButtons.length; i++) {
-            const radioButton = this.radioButtons[i];
-            radioButton.checked = Number(radioButton.value) === value;
-        }
+        this.element.value = value ? value.toString() : "";
     }
     
     getFormat(): Xrm.Attributes.OptionSetAttributeFormat {
