@@ -1,4 +1,5 @@
 import { AttributeFactory } from './Attributes/AttributeFactory';
+import { ControlFactory } from './Controls/ControlFactory';
 
 export namespace PowerPagesClientAPI {
     export class FormContext implements Xrm.FormContext {
@@ -13,8 +14,8 @@ export namespace PowerPagesClientAPI {
             return AttributeFactory.createAttribute(attributeName as string) as T;
         }
         
-        getControl<T extends Xrm.Controls.Control>(delegateFunction?: unknown): T | Xrm.Controls.Control | Xrm.Collection.ItemCollection<Xrm.Controls.Control> | null {
-            throw new Error('Method not implemented.');
+        getControl<T extends Xrm.Controls.StandardControl>(attributeName?: unknown): T | null {
+            return ControlFactory.createControl(attributeName as string) as T;
         }
     }
 }
