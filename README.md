@@ -23,7 +23,7 @@ In general the project is not in a production ready state. But we will keep work
 - :x: getAttributeType  
 - :x: getFormat  
 - :white_check_mark: getInitialValue  
-    Only implemented on Boolean
+    - Only implemented on Boolean
 - :x: getIsDirty
 - :x: getIsPartyList
 - :x: getMax
@@ -85,7 +85,7 @@ In general the project is not in a production ready state. But we will keep work
 - :x: getTotalResultsCount
 - :x: getValue
 - :white_check_mark: getVisible
-    Tested only for Attribute Controls
+    - Tested only for Attribute Controls
 - :x: openSearchResult
 - :x: refresh
 - :x: removeOnLookupTagClick
@@ -106,7 +106,7 @@ In general the project is not in a production ready state. But we will keep work
 - :x: setShowTime
 - :x: setSrc
 - :white_check_mark: setVisible
-    Tested only for Attribute Controls
+    - Tested only for Attribute Controls
 
 ## formContext.data
 - :x: addOnLoad
@@ -206,4 +206,164 @@ Will likely not be implemented as Business Process Flows are not rendered in Pow
 - :x: getVisible
 - :x: setLabel
 - :x: setVisible
+
+## Grids and subgrids
+### GridControl
+- :x: addOnLoad
+- :x: getEntityName
+- :x: getFetchXml
+- :x: getGrid
+- :x: getGridType
+- :x: getRelationship
+- :x: getUrl
+- :x: getViewSelector
+- :x: openRelatedGrid
+- :x: refresh
+- :x: refreshRibbon
+- :x: removeOnLoad
+
+### Grid
+- :x: getRows
+- :x: getSelectedRows
+- :x: getTotalRecordCount
+
+### GridRow
+- :x: getData
+
+### GridRowData
+- :x: getEntity
+
+### GridEntity
+- :x: getEntityName
+- :x: getEntityReference
+- :x: getId
+- :x: getPrimaryAttributeValue
+
+### GridAttribute
+- :x: getName
+- :x: getRequiredLevel
+- :x: getValue
+- :x: setRequiredLevel
+- :x: setValue
+
+### GridCell
+- :x: clearNotification
+- :x: getDisabled
+- :x: getLabel
+- :x: setDisabled
+- :x: setNotification
+
+### ViewSelector
+- :x: getCurrentView
+- :x: isVisible
+- :x: setCurrentView
+
+## Xrm.App
+- :x: addGlobalNotification
+- :x: clearGlobalNotification
+
+### Xrm.App.sidePanes
+- :x: createPane
+- :x: getAllPanes
+- :x: getPane
+- :x: getSelectedPane
+
+## Xrm.Device
+- :x: captureAudio
+- :x: captureImage
+- :x: captureVideo
+- :x: getBarcodeValue
+- :x: getCurrentPosition
+- :x: pickFile
+
+## Xrm.Encoding
+- :x: htmlAttributeEncode
+- :x: htmlDecode
+- :x: htmlEncode
+- :x: xmlAttributeEncode
+- :x: xmlEncode
+
+## Xrm.Navigation
+- :x: navigateTo
+- :x: openAlertDialog
+- :x: openConfirmDialog
+- :x: openErrorDialog
+- :x: openFile
+- :x: openForm
+- :x: openUrl
+- :x: openWebResource
+
+## Xrm.Panel
+- :x: loadPanel
+
+## Xrm.Utility
+- :x: closeProgressIndicator
+- :x: getAllowedStatusTransitions
+- :x: getEntityMetadata
+- :x: getEntityMainFormDescriptor
+- :x: getGlobalContext
+  - :x: client
+    - :x: getClient
+    - :x: getClientState
+    - :x: getFormFactor
+    - :x: isOffline
+    - :x: isNetworkAvailable
+  - :x: organizationSettings
+    - :x: attributes
+    - :x: baseCurrencyId
+    - :x: baseCurrency
+    - :x: defaultCountryCode
+    - :x: isAutoSaveEnabled
+    - :x: languageId
+    - :x: organizationId
+    - :x: isTrialOrganization
+    - :x: organizationExpiryDate
+    - :x: uniqueName
+    - :x: useSkypeProtocol
+    - :x: fullnameConventionCode
+  - :x: userSettings
+    - :x: dateFormattingInfo
+    - :x: defaultDashboardId
+    - :x: isGuidedHelpEnabled
+    - :x: isRTL
+    - :x: languageId
+    - :x: roles
+    - :x: securityRolePrivileges
+    - :x: securityRoles
+    - :x: transactionCurrency
+    - :x: transactionCurrencyId
+    - :x: userId
+    - :x: userName
+    - :x: getSecurityRolePrivilegesInfo
+    - :x: getTimeZoneOffsetMinutes 
+  - :x: getAdvancedConfigSetting
+  - :x: getClientUrl
+  - :x: getCurrentAppName
+  - :x: getCurrentAppProperties
+  - :x: getCurrentAppUrl
+  - :x: getVersion
+  - :x: getWebResourceUrl
+  - :x: isOnPremises
+  - :x: prependOrgName
+- :x: getLearningPathAttributeName
+- :x: getPageContext
+- :x: getResourceString
+- :x: invokeProcessAction
+- :x: lookupObjects
+- :x: refreshParentGrid
+- :x: showProgressIndicator
+
+## Xrm.WebApi
+Xrm.WebApi.offline will not be implemented.
+Xrm.WebApi.online is the same als Xrm.WebApi
+
+- :x: createRecord
+- :x: deleteRecord
+- :x: retrieveRecord
+- :x: retrieveMultipleRecords
+- :x: updateRecord
+- :x: isAvailableOffline
+- :x: execute
+- :x: executeMultiple
+
 
