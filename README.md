@@ -10,6 +10,11 @@ A replication attempt of the Dataverse MDA Client API for Power Pages
 # API State
 In general the project is not in a production ready state. But we will keep working on it!
 
+Legend:
+- :white_check_mark: Implemented
+- :x: Pending
+- :o: Not implementable/Not useful
+
 ## FormContext
 - :white_check_mark: getAttribute  
 - :white_check_mark: getControl  
@@ -148,7 +153,7 @@ Will likely not be implemented as Business Process Flows are not rendered in Pow
 - :x: setFormNotification
 
 ## formContext.ui.formSelector
-Will likely not be implemented as the formSelector is not available in Power Pages
+- :o: Will likely not be implemented as the formSelector is not available in Power Pages
 
 ## formContext.ui.headerSection
 - :x: getBodyVisible
@@ -167,7 +172,7 @@ Will likely not be implemented as the formSelector is not available in Power Pag
 - :x: setVisible
 
 ## formContext.ui.process
-Will likely not be implemented as Business Process Flows are not rendered in Power Pages
+- :o: Will likely not be implemented as Business Process Flows are not rendered in Power Pages
 
 ## formContext.ui.quickForms
 - :x: getControl
@@ -354,9 +359,8 @@ Will likely not be implemented as Business Process Flows are not rendered in Pow
 - :x: showProgressIndicator
 
 ## Xrm.WebApi
-Xrm.WebApi.offline will not be implemented.
-Xrm.WebApi.online is the same als Xrm.WebApi
-
+- :o: Xrm.WebApi.offline will not be implemented.
+- :x: Xrm.WebApi.online is the same als Xrm.WebApi
 - :x: createRecord
 - :x: deleteRecord
 - :x: retrieveRecord
@@ -365,5 +369,3 @@ Xrm.WebApi.online is the same als Xrm.WebApi
 - :x: isAvailableOffline
 - :x: execute
 - :x: executeMultiple
-
-
