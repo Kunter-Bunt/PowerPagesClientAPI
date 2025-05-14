@@ -1,3 +1,5 @@
+import { SectionCollection } from "./SectionCollection";
+
 export class Tab implements Xrm.Controls.Tab {
     logicalName: string;
     element: HTMLDivElement;
@@ -15,6 +17,8 @@ export class Tab implements Xrm.Controls.Tab {
         } else {
             this.title = null;
         }    
+
+        this.sections = new SectionCollection(this);
     }
 
     addTabStateChange(handler: Xrm.Events.ContextSensitiveHandler): void {
@@ -41,7 +45,7 @@ export class Tab implements Xrm.Controls.Tab {
         throw new Error("Method not implemented.");
     }
 
-    sections: Xrm.Collection.ItemCollection<Xrm.Controls.Section> = null as unknown as Xrm.Collection.ItemCollection<Xrm.Controls.Section>;
+    sections: Xrm.Collection.ItemCollection<Xrm.Controls.Section>;
 
     setVisible(visible: boolean): void {
         this.element.style.display = visible ? "block" : "none";
