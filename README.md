@@ -20,7 +20,8 @@ Legend:
 - :white_check_mark: getControl  
   - Tested only for Attribute Controls
 - :x: data  
-- :x: ui  
+- :white_check_mark: ui
+  - Partial implementation only
 
 ## Attributes
 - :x: addOnChange  
@@ -151,6 +152,7 @@ Legend:
 - :x: removeLoaded
 - :x: setFormEntityName
 - :x: setFormNotification
+- :white_check_mark: tabs
 
 ## formContext.ui.formSelector
 - :o: Will likely not be implemented as the formSelector is not available in Power Pages
@@ -194,23 +196,24 @@ Legend:
 - :x: getContentType
 - :x: getDisplayState
 - :x: getLabel
-- :x: getName
+- :white_check_mark: getName
 - :x: getParent
-- :x: getVisible
+- :white_check_mark: getVisible
 - :x: removeTabStateChange
 - :x: setContentType
 - :x: setDisplayState
 - :x: setFocus
 - :x: setLabel
-- :x: setVisible
+- :white_check_mark: setVisible
+- :white_check_mark: sections
 
 ### sections
-- :x: getLabel
-- :x: getName
+- :white_check_mark: getLabel
+- :white_check_mark: getName
 - :x: getParent
-- :x: getVisible
-- :x: setLabel
-- :x: setVisible
+- :white_check_mark: getVisible
+- :white_check_mark: setLabel
+- :white_check_mark: setVisible
 
 ## Grids and subgrids
 ### GridControl
