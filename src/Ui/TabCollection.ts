@@ -2,14 +2,14 @@ import { ItemCollection } from "../Helpers/ItemCollection";
 import { Tab } from "./Tab";
 
 export class TabCollection extends ItemCollection implements Xrm.Collection.ItemCollection<Xrm.Controls.Tab> {
-    constructor() {
+    constructor(parent?: Xrm.Ui) {
         const tabElements = document.querySelectorAll('div.tab');
         
         const tabs = Array.from(tabElements)
             .filter(_ => _.getAttribute('data-name'))
             .map(_ => {
                 const dataName = _.getAttribute('data-name')!;
-                return new Tab(dataName);
+                return new Tab(dataName, parent);
             });
         
         super(tabs);

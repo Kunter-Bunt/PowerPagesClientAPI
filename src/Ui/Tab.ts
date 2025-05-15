@@ -4,8 +4,10 @@ export class Tab implements Xrm.Controls.Tab {
     logicalName: string;
     element: HTMLDivElement;
     title: HTMLHeadingElement | null;
+    parent: Xrm.Ui | undefined;
 
-    constructor(logicalName: string) {
+    constructor(logicalName: string, parent?: Xrm.Ui) {
+        this.parent = parent;
         this.logicalName = logicalName;
         this.element = document.querySelector(`div[data-name="${logicalName}"]`) as HTMLDivElement;
         if (!this.element)
@@ -34,7 +36,7 @@ export class Tab implements Xrm.Controls.Tab {
     }
 
     getParent(): Xrm.Ui {
-        throw new Error("Method not implemented.");
+        return this.parent as Xrm.Ui;
     }
 
     removeTabStateChange(handler: Xrm.Events.ContextSensitiveHandler): void {
@@ -60,11 +62,13 @@ export class Tab implements Xrm.Controls.Tab {
     }
 
     getLabel(): string {
-        throw new Error("Method not implemented.");
+        return this.title?.innerText || "";
     }
 
     setLabel(label: string): void {
-        throw new Error("Method not implemented.");
+        if (this.title) {
+            this.title.innerText = label;
+        }
     }
 
     setFocus(): void {

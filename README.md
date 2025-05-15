@@ -195,25 +195,26 @@ Legend:
 - :x: addTabStateChange
 - :x: getContentType
 - :x: getDisplayState
-- :x: getLabel
+- :white_check_mark: getLabel
 - :white_check_mark: getName
-- :x: getParent
+- :white_check_mark: getParent
 - :white_check_mark: getVisible
 - :x: removeTabStateChange
 - :x: setContentType
 - :x: setDisplayState
 - :x: setFocus
-- :x: setLabel
+- :white_check_mark: setLabel
 - :white_check_mark: setVisible
 - :white_check_mark: sections
 
 ### sections
 - :white_check_mark: getLabel
 - :white_check_mark: getName
-- :x: getParent
+- :white_check_mark: getParent
 - :white_check_mark: getVisible
 - :white_check_mark: setLabel
 - :white_check_mark: setVisible
+- :x: controls
 
 ## Grids and subgrids
 ### GridControl

@@ -10,7 +10,7 @@ export class SectionCollection extends ItemCollection implements Xrm.Collection.
             .filter(_ => _.getAttribute('data-name'))
             .map(_ => {
                 const dataName = _.getAttribute('data-name')!;
-                return new Section(dataName);
+                return new Section(dataName, tab);
             });
         
         super(sections);

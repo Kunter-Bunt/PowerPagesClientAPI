@@ -2,7 +2,7 @@ import { TabCollection } from "./TabCollection";
 
 export class Ui implements Xrm.Ui {
     constructor() {
-        this.tabs = new TabCollection();
+        this.tabs = new TabCollection(this);
     }
 
     addOnLoad(handler: Xrm.Events.LoadEventHandler | Xrm.Events.LoadEventHandlerAsync): void {

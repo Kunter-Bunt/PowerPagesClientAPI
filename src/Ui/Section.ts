@@ -3,8 +3,10 @@ export class Section implements Xrm.Controls.Section {
     element: HTMLDivElement;
     container: HTMLFieldSetElement;
     title: HTMLHeadingElement;
+    parent: Xrm.Controls.Tab | undefined;
 
-    constructor(logicalName: string) {
+    constructor(logicalName: string, parent?: Xrm.Controls.Tab) {
+        this.parent = parent;
         this.logicalName = logicalName;
         this.element = document.querySelector(`table[data-name="${logicalName}"]`) as HTMLDivElement;
         if (!this.element)
@@ -19,7 +21,7 @@ export class Section implements Xrm.Controls.Section {
     }
 
     getParent(): Xrm.Controls.Tab {
-        throw new Error("Method not implemented.");
+        return this.parent as Xrm.Controls.Tab;
     }
 
     controls: Xrm.Collection.ItemCollection<Xrm.Controls.Control> = null as unknown as Xrm.Collection.ItemCollection<Xrm.Controls.Control>;
