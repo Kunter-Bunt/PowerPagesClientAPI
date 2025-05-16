@@ -1,8 +1,8 @@
 import { AttributeBase } from "./AttributeBase";
 
 export class StringAttribute extends AttributeBase implements Xrm.Attributes.StringAttribute {
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
     }
 
     getValue(): string {
@@ -19,6 +19,10 @@ export class StringAttribute extends AttributeBase implements Xrm.Attributes.Str
 
     getFormat(): Xrm.Attributes.StringAttributeFormat {
         throw new Error("Method not implemented.");
+    }
+
+    getAttributeType(): "string" {
+        return "string";
     }
 
     controls: Xrm.Collection.ItemCollection<Xrm.Controls.StringControl> = null as unknown as Xrm.Collection.ItemCollection<Xrm.Controls.StringControl>;

@@ -2,11 +2,11 @@ import { BooleanAttribute } from "../Attributes/BooleanAttribute";
 import { ControlBase } from "./ControlBase";
 
 export class BooleanControl extends ControlBase implements Xrm.Controls.BooleanControl {
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
     }
 
     getAttribute(): BooleanAttribute {
-        return new BooleanAttribute(this.logicalName);
+        return new BooleanAttribute(this.logicalName, this.formContext);
     }
 }

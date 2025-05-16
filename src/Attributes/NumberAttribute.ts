@@ -2,8 +2,11 @@ import { AttributeBase } from "./AttributeBase";
 
 export class NumberAttribute extends AttributeBase implements Xrm.Attributes.NumberAttribute
 {
-    constructor(logicalName: string) {
-        super(logicalName);
+    type: Xrm.Attributes.AttributeType;
+
+    constructor(logicalName: string, formContext: Xrm.FormContext, type: Xrm.Attributes.AttributeType) {
+        super(logicalName, formContext);
+        this.type = type;
     }
     
     getValue(): number | null {
@@ -33,6 +36,10 @@ export class NumberAttribute extends AttributeBase implements Xrm.Attributes.Num
 
     setPrecision(precision: number): void {
         throw new Error("Method not implemented.");
+    }
+
+    getAttributeType(): Xrm.Attributes.AttributeType {
+        return this.type;
     }
 
     controls: Xrm.Collection.ItemCollection<Xrm.Controls.NumberControl> = null as unknown as Xrm.Collection.ItemCollection<Xrm.Controls.NumberControl>;

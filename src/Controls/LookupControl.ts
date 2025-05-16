@@ -2,8 +2,8 @@ import { LookupAttribute } from "../Attributes/LookupAttribute";
 import { ControlBase } from "./ControlBase";
 
 export class LookupControl extends ControlBase implements Xrm.Controls.LookupControl {
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
     }
     
     addPreSearch(handler: Xrm.Events.ContextSensitiveHandler): void {
@@ -47,6 +47,6 @@ export class LookupControl extends ControlBase implements Xrm.Controls.LookupCon
     }
 
     getAttribute(): LookupAttribute {
-        return new LookupAttribute(this.logicalName);
+        return new LookupAttribute(this.logicalName, this.formContext);
     }
 }

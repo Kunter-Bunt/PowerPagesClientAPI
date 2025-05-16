@@ -3,9 +3,11 @@ export abstract class ControlBase implements Xrm.Controls.StandardControl {
     element: HTMLInputElement;
     labelElement: HTMLLabelElement;
     containerElement: HTMLTableCellElement;
+    formContext: Xrm.FormContext;
 
-    constructor(logicalName: string) {
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
         this.logicalName = logicalName;
+        this.formContext = formContext;
         
         this.element = document.getElementById(logicalName) as HTMLInputElement;
 
@@ -45,7 +47,7 @@ export abstract class ControlBase implements Xrm.Controls.StandardControl {
     }
 
     getName(): string {
-        throw new Error("Method not implemented.");
+        return this.logicalName;
     }
 
     getParent(): Xrm.Controls.Section {

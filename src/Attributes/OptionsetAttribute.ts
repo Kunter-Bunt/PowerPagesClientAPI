@@ -2,8 +2,8 @@ import { AttributeBase } from "./AttributeBase";
 
 export class OptionSetAttribute extends AttributeBase implements Xrm.Attributes.OptionSetAttribute
 {
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
     }
 
     getValue(): number | null {
@@ -39,6 +39,9 @@ export class OptionSetAttribute extends AttributeBase implements Xrm.Attributes.
         throw new Error("Method not implemented.");
     }
 
+    getAttributeType(): "optionset" {
+        return "optionset";
+    }
     
     controls: Xrm.Collection.ItemCollection<Xrm.Controls.OptionSetControl> = null as unknown as Xrm.Collection.ItemCollection<Xrm.Controls.OptionSetControl>;
 }

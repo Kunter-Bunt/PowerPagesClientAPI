@@ -3,8 +3,8 @@ import { ControlBase } from "./ControlBase";
 
 export class OptionSetControl extends ControlBase implements Xrm.Controls.OptionSetControl
 {
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
     }
     
     addOption(option: Xrm.OptionSetValue, index?: number): void {
@@ -24,6 +24,6 @@ export class OptionSetControl extends ControlBase implements Xrm.Controls.Option
     }
 
     getAttribute(): OptionSetAttribute {
-        return new OptionSetAttribute(this.logicalName);
+        return new OptionSetAttribute(this.logicalName, this.formContext);
     }
 }

@@ -3,8 +3,8 @@ import { AttributeBase } from "./AttributeBase";
 export class DateTimeAttribute extends AttributeBase implements Xrm.Attributes.DateAttribute {
     displayElement: HTMLInputElement;
     
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
 
         this.displayElement = document.getElementById(logicalName + '_datepicker_description') as HTMLInputElement;
     }
@@ -27,6 +27,10 @@ export class DateTimeAttribute extends AttributeBase implements Xrm.Attributes.D
 
     getFormat(): Xrm.Attributes.DateAttributeFormat {
         throw new Error("Method not implemented.");
+    }
+
+    getAttributeType(): "datetime" {
+        return "datetime";
     }
 
     controls: Xrm.Collection.ItemCollection<Xrm.Controls.DateControl> = null as unknown as Xrm.Collection.ItemCollection<Xrm.Controls.DateControl>;

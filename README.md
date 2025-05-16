@@ -24,18 +24,18 @@ Legend:
   - Partial implementation only
 
 ## Attributes
-- :x: addOnChange  
-- :x: fireOnChange  
-- :x: getAttributeType  
+- :white_check_mark: addOnChange  
+- :white_check_mark: fireOnChange  
+- :white_check_mark: getAttributeType  
 - :x: getFormat  
 - :white_check_mark: getInitialValue  
     - Only implemented on Boolean
-- :x: getIsDirty
+- :white_check_mark: getIsDirty
 - :x: getIsPartyList
 - :x: getMax
 - :x: getMaxLength
 - :x: getMin
-- :x: getName
+- :white_check_mark: getName
 - :x: getOption
 - :x: getOptions
 - :x: getParent
@@ -47,7 +47,7 @@ Legend:
 - :x: getUserPrivilege
 - :white_check_mark: getValue
 - :x: isValid
-- :x: removeOnChange
+- :white_check_mark: removeOnChange
 - :x: setIsValid
 - :x: setPrecision
 - :x: setRequiredLevel
@@ -78,7 +78,7 @@ Legend:
 - :x: getEntityTypes
 - :x: getInitialUrl
 - :x: getLabel
-- :x: getName
+- :white_check_mark: getName
 - :x: getObject
 - :x: getOptions
 - :x: getOutputs

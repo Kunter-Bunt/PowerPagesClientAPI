@@ -5,8 +5,8 @@ export class LookupAttribute extends AttributeBase implements Xrm.Attributes.Loo
     entity: HTMLInputElement;
     name: HTMLInputElement;
 
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
 
         this.entity = document.getElementById(logicalName + '_entityname') as HTMLInputElement;
         this.name = document.getElementById(logicalName + '_name') as HTMLInputElement;
@@ -36,6 +36,10 @@ export class LookupAttribute extends AttributeBase implements Xrm.Attributes.Loo
     
     getIsPartyList(): boolean {
         throw new Error("Method not implemented.");
+    }
+
+    getAttributeType(): "lookup" {
+        return "lookup";
     }
 
     controls: Xrm.Collection.ItemCollection<Xrm.Controls.LookupControl> = null as unknown as Xrm.Collection.ItemCollection<Xrm.Controls.LookupControl>;

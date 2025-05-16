@@ -2,8 +2,8 @@ import { DateTimeAttribute } from "../Attributes/DateTimeAttribute";
 import { ControlBase } from "./ControlBase";
 
 export class DateTimeControl extends ControlBase implements Xrm.Controls.DateControl {
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
     }
     
     getShowTime(): boolean {
@@ -15,6 +15,6 @@ export class DateTimeControl extends ControlBase implements Xrm.Controls.DateCon
     }
 
     getAttribute(): DateTimeAttribute {
-        return new DateTimeAttribute(this.logicalName);
+        return new DateTimeAttribute(this.logicalName, this.formContext);
     }
 }

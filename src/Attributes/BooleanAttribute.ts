@@ -4,8 +4,8 @@ export class BooleanAttribute extends AttributeBase implements Xrm.Attributes.Bo
     initialValue: boolean | null;
     radioButtons: NodeListOf<HTMLInputElement>;
 
-    constructor(logicalName: string) {
-        super(logicalName);
+    constructor(logicalName: string, formContext: Xrm.FormContext) {
+        super(logicalName, formContext);
 
         this.radioButtons = this.element.querySelectorAll('input[type="radio"]');
         this.initialValue = this.getValue();

@@ -6,30 +6,36 @@ import { OptionSetControl } from "./OptionSetControl";
 import { StringControl } from "./StringControl";
 
 export class ControlFactory {
-    static createControl(logicalName: string) : Xrm.Controls.StandardControl | null {
+    formContext: Xrm.FormContext;
+
+    constructor(formContext: Xrm.FormContext) {
+        this.formContext = formContext;
+    }
+
+    createControl(logicalName: string) : Xrm.Controls.StandardControl | null {
         let tempElement = document.getElementById(logicalName) as HTMLInputElement;
         if (!tempElement)
             throw new Error(`Control ${logicalName} not found`);
 
         let entityField = document.getElementById(logicalName + '_entityname')
         if (entityField)
-            return new LookupControl(logicalName);
+            return new LookupControl(logicalName, this.formContext);
         if (tempElement.classList.contains('decimal'))  
-            return new NumberControl(logicalName);
+            return new NumberControl(logicalName, this.formContext, 'decimal');
         if (tempElement.classList.contains('integer'))  
-            return new NumberControl(logicalName);
+            return new NumberControl(logicalName, this.formContext, 'integer');
         if (tempElement.classList.contains('double'))  
-            return new NumberControl(logicalName);
+            return new NumberControl(logicalName, this.formContext, 'double');
         if (tempElement.classList.contains('boolean-radio'))
-            return new BooleanControl(logicalName);
+            return new BooleanControl(logicalName, this.formContext);
         if (tempElement.classList.contains('picklist'))
-            return new OptionSetControl(logicalName);
+            return new OptionSetControl(logicalName, this.formContext);
         if (tempElement.classList.contains('datetime'))
-            return new DateTimeControl(logicalName);
+            return new DateTimeControl(logicalName, this.formContext);
         if (tempElement.classList.contains('money'))
-            return new NumberControl(logicalName);
+            return new NumberControl(logicalName, this.formContext, 'money');
         if (tempElement.type === 'text')
-            return new StringControl(logicalName);
+            return new StringControl(logicalName, this.formContext);
 
         return null;
     }
