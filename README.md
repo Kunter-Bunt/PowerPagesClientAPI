@@ -218,49 +218,64 @@ Legend:
 
 ## Grids and subgrids
 ### GridControl
-- :x: addOnLoad
-- :x: getEntityName
+- :white_check_mark: addOnLoad
+- :white_check_mark: getEntityName
 - :x: getFetchXml
-- :x: getGrid
-- :x: getGridType
+- :white_check_mark: getGrid
+- :white_check_mark: getGridType
 - :x: getRelationship
-- :x: getUrl
+- :o: getUrl
+  This function simply returns the Url of the current page
 - :x: getViewSelector
 - :x: openRelatedGrid
 - :x: refresh
 - :x: refreshRibbon
-- :x: removeOnLoad
+- :white_check_mark: removeOnLoad
 
 ### Grid
-- :x: getRows
-- :x: getSelectedRows
+- :white_check_mark: getRows
+- :o: getSelectedRows  
+Since you can't select rows in Power Pages and instead perform operation directly on the row, this function will always return an empty list.
 - :x: getTotalRecordCount
 
 ### GridRow
-- :x: getData
+- :white_check_mark: data
+- :white_check_mark: getData
 
 ### GridRowData
-- :x: getEntity
+- :white_check_mark: getEntity
+- :white_check_mark: entity
 
 ### GridEntity
-- :x: getEntityName
-- :x: getEntityReference
-- :x: getId
-- :x: getPrimaryAttributeValue
+- :white_check_mark: getEntityName
+- :white_check_mark: getEntityReference
+- :white_check_mark: getId
+- :white_check_mark: getPrimaryAttributeValue
+- :white_check_mark: attributes
+  Note: Official docs are missing this property
 
 ### GridAttribute
-- :x: getName
-- :x: getRequiredLevel
-- :x: getValue
-- :x: setRequiredLevel
-- :x: setValue
+- :white_check_mark: getName
+- :o: getRequiredLevel
+  Grids are not editable in Power Pages. This function will only return "none".
+- :white_check_mark: getValue
+- :o: setRequiredLevel
+  Grids are not editable in Power Pages. This function will do nothing.
+- :white_check_mark: setValue
+  Grids are not editable in Power Pages. This function will only change the display.
+- :white_check_mark: controls
+  Note: Official docs are missing this property
 
 ### GridCell
-- :x: clearNotification
-- :x: getDisabled
-- :x: getLabel
-- :x: setDisabled
-- :x: setNotification
+- :o: clearNotification
+  Grids are not editable in Power Pages. This function will do nothing.
+- :o: getDisabled
+  Grids are not editable in Power Pages. This function will only return true.
+- :white_check_mark: getLabel
+- :o: setDisabled
+  Grids are not editable in Power Pages. This function will do nothing.
+- :o: setNotification
+  Grids are not editable in Power Pages. This function will do nothing.
 
 ### ViewSelector
 - :x: getCurrentView
@@ -363,13 +378,16 @@ Legend:
 - :x: showProgressIndicator
 
 ## Xrm.WebApi
-- :o: Xrm.WebApi.offline will not be implemented.
-- :x: Xrm.WebApi.online is the same als Xrm.WebApi
-- :x: createRecord
-- :x: deleteRecord
-- :x: retrieveRecord
-- :x: retrieveMultipleRecords
-- :x: updateRecord
-- :x: isAvailableOffline
+- :o: Xrm.WebApi.offline
+  Is the same as Xrm.WebApi
+- :white_check_mark: Xrm.WebApi.online 
+  Is the same as Xrm.WebApi
+- :white_check_mark: createRecord
+- :white_check_mark: deleteRecord
+- :white_check_mark: retrieveRecord
+- :white_check_mark: retrieveMultipleRecords
+- :white_check_mark: updateRecord
+- :o: isAvailableOffline
+  Will always return false.
 - :x: execute
 - :x: executeMultiple

@@ -1,6 +1,6 @@
 {
   "name": "powerpagesclientapi",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Client API resembling the Client API of Dataverse MDA for Power Pages",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
