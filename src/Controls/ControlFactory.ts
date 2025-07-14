@@ -1,3 +1,4 @@
+import { GridControl } from "../Grids/GridControl";
 import { BooleanControl } from "./BooleanControl";
 import { DateTimeControl } from "./DateTimeControl";
 import { LookupControl } from "./LookupControl";
@@ -34,6 +35,8 @@ export class ControlFactory {
             return new DateTimeControl(logicalName, this.formContext);
         if (tempElement.classList.contains('money'))
             return new NumberControl(logicalName, this.formContext, 'money');
+        if (tempElement.classList.contains('subgrid'))
+            return new GridControl(logicalName, this.formContext);
         if (tempElement.type === 'text')
             return new StringControl(logicalName, this.formContext);
 

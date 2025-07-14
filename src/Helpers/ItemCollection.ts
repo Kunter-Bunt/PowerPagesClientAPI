@@ -1,5 +1,5 @@
 export abstract class ItemCollection implements Xrm.Collection.ItemCollection<any> {
-    private items: any[] = [];
+    protected items: any[] = [];
 
     constructor(items: any[]) {
         this.items = items;

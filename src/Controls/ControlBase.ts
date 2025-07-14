@@ -12,7 +12,7 @@ export abstract class ControlBase implements Xrm.Controls.StandardControl {
         this.element = document.getElementById(logicalName) as HTMLInputElement;
 
         if (!this.element)
-            throw new Error(`Attribute ${this.logicalName} not found`);
+            throw new Error(`Control ${this.logicalName} not found`);
 
         this.labelElement = document.getElementById(logicalName + "_label") as HTMLLabelElement;
         this.containerElement = this.element.closest("td") as HTMLTableCellElement;
