@@ -33,7 +33,8 @@
     "typescript": "^5.5.3",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
-    "webpack-merge": "^6.0.1"
+    "webpack-merge": "^6.0.1",
+    "@types/jquery": "^3.5.32"
   },
   "dependencies": {
     "tslib": "^2.6.3"
