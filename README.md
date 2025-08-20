@@ -115,12 +115,13 @@ Legend:
     - Tested only for Attribute Controls
 
 ## formContext.data
-- :x: addOnLoad
-- :x: getIsDirty
+- :white_check_mark: addOnLoad
+- :white_check_mark: getIsDirty
 - :x: isValid
-- :x: refresh
-- :x: removeOnLoad
-- :x: save
+- :white_check_mark: refresh
+- :white_check_mark: removeOnLoad
+- :white_check_mark: save
+- :white_check_mark: attributes
 
 ## formContext.data.entity
 - :x: addOnPostSave

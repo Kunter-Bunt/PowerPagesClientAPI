@@ -1,6 +1,7 @@
 import { AttributeFactory } from './Attributes/AttributeFactory';
 import { ControlFactory } from './Controls/ControlFactory';
 import { Ui } from './Ui/Ui';
+import { Data } from './Data/Data';
 
 export class FormContext implements Xrm.FormContext {
     private attributeFactory: AttributeFactory;
@@ -10,9 +11,10 @@ export class FormContext implements Xrm.FormContext {
         this.ui = new Ui();
         this.attributeFactory = new AttributeFactory(this);
         this.controlFactory = new ControlFactory(this);
+        this.data = new Data(this);
     }
 
-    data: Xrm.Data = null as unknown as Xrm.Data;
+    data: Xrm.Data;
 
     ui: Xrm.Ui;
 
