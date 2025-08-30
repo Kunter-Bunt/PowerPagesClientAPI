@@ -141,18 +141,20 @@ Legend:
 - :o: Will likely not be implemented as Business Process Flows are not rendered in Power Pages
 
 ## formContext.ui
-- :x: addOnLoad
+- :white_check_mark: addOnLoad
 - :x: addLoaded
-- :x: clearFormNotification
-- :x: close
-- :x: getFormType
-- :x: getViewPortHeight
-- :x: getViewPortWidth
-- :x: refreshRibbon
-- :x: removeOnLoad
+- :white_check_mark: clearFormNotification
+- :white_check_mark: close
+- :white_check_mark: getFormType
+- :white_check_mark: getViewPortHeight
+- :white_check_mark: getViewPortWidth
+- :o: refreshRibbon
+  There is no ribbon displayed in Power Pages
+- :white_check_mark: removeOnLoad
 - :x: removeLoaded
-- :x: setFormEntityName
-- :x: setFormNotification
+- :o: setFormEntityName
+  There is no Form Entity Name displayed in Power Pages
+- :white_check_mark: setFormNotification
 - :white_check_mark: tabs
 
 ## formContext.ui.formSelector

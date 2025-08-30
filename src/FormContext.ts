@@ -8,7 +8,7 @@ export class FormContext implements Xrm.FormContext {
     private controlFactory: ControlFactory;
 
     constructor() {
-        this.ui = new Ui();
+        this.ui = new Ui(this);
         this.attributeFactory = new AttributeFactory(this);
         this.controlFactory = new ControlFactory(this);
         this.data = new Data(this);
