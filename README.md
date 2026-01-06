@@ -312,13 +312,18 @@ Since you can't select rows in Power Pages and instead perform operation directl
 
 ## Xrm.Navigation
 - :x: navigateTo
-- :x: openAlertDialog
-- :x: openConfirmDialog
-- :x: openErrorDialog
-- :x: openFile
+- :white_check_mark: openAlertDialog
+  Opens modal with Bootstrap modal classes applied plus the following classes: ppca_modal ppca_modal-content ppca_modal-alert ppca_modal-header ppca_modal-title ppca_modal-close ppca_modal-body ppca_modal-icon ppca_modal-subtitle ppca_modal-text ppca_modal-details ppca_modal-footer ppca_modal-button ppca_modal-button-confirm
+- :white_check_mark: openConfirmDialog
+  See openAlertDialog, additional classes: ppca_modal-confirm ppca_modal-button ppca_modal-button-cancel
+- :white_check_mark: openErrorDialog 
+  See openAlertDialog, additional classes: ppca_modal-error
+- :white_check_mark: openFile
 - :x: openForm
-- :x: openUrl
-- :x: openWebResource
+- :white_check_mark: openUrl
+  Specify relative or absolute url, specify (any) windowOptions to open in new tab, specify `width` & `height` to open as popup.
+- :white_check_mark: openWebResource
+  Specify relative url of page, specify (any) windowOptions to open in new tab, specify `width` & `height` to open as popup.
 
 ## Xrm.Panel
 - :x: loadPanel
